@@ -36,7 +36,7 @@ export const progressApi = {
 };
 
 export const leaderboardApi = {
-  get: (limit = 20) => api.get(`/api/leaderboard/?limit=${limit}`),
+  get: (limit = 20) => api.get(`/api/leaderboard?limit=${limit}`),
 };
 
 export const certificatesApi = {

@@ -9,7 +9,7 @@ from auth import get_current_user
 router = APIRouter(prefix="/api/leaderboard", tags=["leaderboard"])
 
 
-@router.get("/", response_model=List[schemas.LeaderboardEntry])
+@router.get("", response_model=List[schemas.LeaderboardEntry])
 def get_leaderboard(limit: int = 20, db: Session = Depends(get_db), current_user: models.User = Depends(get_current_user)):
     users = (
         db.query(models.User)
