@@ -49,8 +49,10 @@ def generate_certificate(db: Session = Depends(get_db), current_user: models.Use
             qr_code_url=existing.qr_code_url,
         )
 
+    import os
     cert_id = str(uuid.uuid4())[:8].upper()
-    verify_url = f"http://localhost:3000/certificate/{cert_id}"
+    base_url = os.getenv("NEXT_PUBLIC_API_URL", "http://localhost:3000").replace(":8000", ":3000")
+    verify_url = f"{base_url}/certificate/{cert_id}"
     qr_code = generate_qr_base64(verify_url)
 
     certificate = models.Certificate(
