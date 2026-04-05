@@ -3,5 +3,5 @@ builder = "dockerfile"
 dockerfilePath = "Dockerfile"
 
 [deploy]
-startCommand = "PORT=$PORT node server.js"
+startCommand = "node server.js"
 restartPolicyType = "on_failure"
