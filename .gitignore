@@ -1,0 +1,25 @@
+# Environment secrets
+.env
+.env.local
+.env.production
+
+# Node
+node_modules/
+frontend/.next/
+frontend/out/
+frontend/.cache/
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+backend/.venv/
+venv/
+.venv/
+
+# Docker volumes
+postgres_data/
+
+# OS
+.DS_Store
+Thumbs.db

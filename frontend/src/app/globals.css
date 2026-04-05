@@ -1,0 +1,53 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&display=swap');
+
+* { box-sizing: border-box; }
+
+body {
+  background-color: #0a0e1a;
+  color: #e2e8f0;
+  font-family: 'JetBrains Mono', monospace;
+}
+
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: #111827; }
+::-webkit-scrollbar-thumb { background: #374151; border-radius: 3px; }
+
+.cyber-border {
+  border: 1px solid #1f2937;
+  box-shadow: 0 0 20px rgba(0, 255, 136, 0.05);
+}
+
+.hp-bar-fill {
+  transition: width 0.5s ease-in-out;
+}
+
+.glitch-text {
+  animation: glitch 0.3s infinite;
+}
+
+@keyframes glitch {
+  0%, 100% { transform: translate(0); text-shadow: none; }
+  20% { transform: translate(-2px, 1px); text-shadow: 2px 0 #ff3366; }
+  40% { transform: translate(2px, -1px); text-shadow: -2px 0 #00ff88; }
+  60% { transform: translate(-1px, -1px); text-shadow: 2px 0 #0088ff; }
+  80% { transform: translate(1px, 2px); text-shadow: -2px 0 #ff3366; }
+}
+
+.scan-overlay::after {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 2px;
+  background: rgba(0, 255, 136, 0.3);
+  animation: scanline 3s linear infinite;
+  pointer-events: none;
+}
+
+@keyframes scanline {
+  0% { top: 0%; }
+  100% { top: 100%; }
+}
